@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DijkstraAStarTest" project="be-graphes-algos" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" time="14.659">
+    <testcase name="testDoDistance" classname="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" time="7.615"/>
+    <testcase name="testDoTemps" classname="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" time="7.044"/>
+  </testsuite>
+</testrun>

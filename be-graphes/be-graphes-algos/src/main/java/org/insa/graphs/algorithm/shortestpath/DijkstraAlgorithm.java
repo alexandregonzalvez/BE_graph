@@ -24,15 +24,18 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
     	
     	
     	// Initialisation
-    	BinaryHeap<Label> tas = new BinaryHeap<Label>();
-    	final ShortestPathData data = getInputData();
-    	ShortestPathSolution solution = null;
+    	BinaryHeap<Label> tas = new BinaryHeap<Label>(); // init tas of label
+    	
+    	ShortestPathSolution solution = null; // init solution
+    	boolean fin = false;
+    	
+    	final ShortestPathData data = getInputData(); // recup input Data
     	Graph graph = data.getGraph();
     	int tailleGraphe = graph.size();
-    	boolean fin = false;
-    	Label tabLabels[] = new Label [tailleGraphe];
-    	Arc[] predecessorArcs = new Arc[tailleGraphe];
-		
+    	Label tabLabels[] = new Label [tailleGraphe]; // table of label
+    	Arc[] predecessorArcs = new Arc[tailleGraphe]; // table of predecessors
+    	
+    	
 		// On ajoute le premier point dans le tas
 		Label deb = constructorLabel(data.getOrigin(), data);     //Modification pour le A*
 		tabLabels[deb.getNode().getId()] = deb;
@@ -43,11 +46,12 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 		// Affichage
 		notifyOriginProcessed(data.getOrigin());
 		
-		//Boucle principal
+		//Boucle principal (tant que des noeuds ne sont pas marqué
 		while(!tas.isEmpty() && !fin){ 
 			Label currentLabel= tas.deleteMin();
-			notifyNodeMarked(currentLabel.getNode());
+			notifyNodeMarked(currentLabel.getNode()); // notif observer that node are marked
 			currentLabel.setMarque(true);
+			// Si fin arrête la boucle
 			if (currentLabel.getNode() == data.getDestination()) {
 				fin = true;
 			}
@@ -60,6 +64,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 				
 				Arc currentArc = IListArcs.next();
 
+				// Check allowed roads
 				if (!data.isAllowed(currentArc)) {
 					continue;
 				}
@@ -77,7 +82,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 				if (!successeurLabel.getMarque()) {
 					//Condition principal : modification avec A*
 					if( successeurLabel.getTotalCost()> currentLabel.getCost()+data.getCost(currentArc)+successeurLabel.getTotalCost()-successeurLabel.getCost()
-							|| successeurLabel.getCost()==Double.POSITIVE_INFINITY
+							|| successeurLabel.getCost()==Float.POSITIVE_INFINITY
 							){
 						
 						successeurLabel.setCout(currentLabel.getCost()+(float)data.getCost(currentArc));
@@ -100,6 +105,10 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 		if (predecessorArcs[data.getDestination().getId()] == null) {
 			solution = new ShortestPathSolution(data, Status.INFEASIBLE);
 		} else {
+			// The destination has been found, notify the observers.
+            notifyDestinationReached(data.getDestination());
+            
+            // Create a path from the array predecessor
 			ArrayList<Arc> arcs = new ArrayList<>();
 			Arc arc = predecessorArcs[data.getDestination().getId()];
 

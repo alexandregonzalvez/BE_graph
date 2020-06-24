@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PerformanceDijkstraAStar" project="be-graphes-algos" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" time="6.808">
+    <testcase name="testTime1" classname="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" time="1.958"/>
+    <testcase name="testTime2" classname="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" time="2.01"/>
+    <testcase name="testLength1" classname="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" time="1.322"/>
+    <testcase name="testLength2" classname="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" time="1.518"/>
+  </testsuite>
+</testrun>

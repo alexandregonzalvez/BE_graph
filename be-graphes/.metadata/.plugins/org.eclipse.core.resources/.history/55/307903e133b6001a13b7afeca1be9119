@@ -1,0 +1,76 @@
+package org.insa.graphs.algorithm.shortestpath;
+
+import static org.junit.Assert.assertEquals;
+
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+
+import org.insa.graphs.algorithm.ArcInspector;
+import org.insa.graphs.algorithm.ArcInspectorFactory;
+import org.insa.graphs.algorithm.AbstractInputData.Mode;
+import org.insa.graphs.model.Graph;
+import org.insa.graphs.model.io.BinaryGraphReader;
+import org.insa.graphs.model.io.GraphReader;
+
+public class solutionBellmanFord  extends solutionDijkstraTest{
+	// Fonction testant un scénario
+			
+			
+			// Fonction qui execute un scenario
+			/* retourne 0 si pas de solution 
+			 * retourne 1 si solution
+			 */
+			@Override
+					public int execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
+						System.out.println("A Star ");
+
+						System.out.println("Origine : " + origine);
+						System.out.println("Destination : " + destination);
+
+						// Create a graph reader.
+						GraphReader reader = new BinaryGraphReader(
+								new DataInputStream(new BufferedInputStream(new FileInputStream(mapName))));
+
+						// Read the graph.
+						Graph graph = reader.read();
+
+						
+						ArcInspector arcInspectorBF;
+						
+						if (modeEval == Mode.TIME) { //Temps
+							System.out.println("Mode d'évaluation : Temps");
+							arcInspectorBF = ArcInspectorFactory.getAllFilters().get(2);
+						} else {//LENGTH
+							System.out.println("Mode d'évaluation : Distance");
+							arcInspectorBF = ArcInspectorFactory.getAllFilters().get(0);
+						}
+						
+						ShortestPathData data = new ShortestPathData(graph, graph.get(origine),graph.get(destination), arcInspectorDijkstra);
+						AStarAlgorithm DAStaralgo = new AStarAlgorithm(data);
+									
+						// Recuperation des solutions de Bellman et Dijkstra pour comparer 
+						ShortestPathSolution solution = DAStaralgo.run();
+					
+									
+						if (solution.getPath() == null) {
+							System.out.println("PAS DE SOLUTION");
+							System.out.println("(infini) ");
+							return 0;
+						}
+						// Un plus court chemin trouve 
+						else {
+							double coutDeLaSolution;
+							if(modeEval ==Mode.TIME) { //Temps
+								//Calcul du cout de la solution 
+								coutDeLaSolution = solution.getPath().getMinimumTravelTime();
+							} else {//LENGTH
+								//Calcul du cout de la solution 
+								coutDeLaSolution = solution.getPath().getLength();
+							}
+							System.out.println("Cout solution: " + coutDeLaSolution);
+									
+							return 1;
+							}
+					}
+}

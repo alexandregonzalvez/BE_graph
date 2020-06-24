@@ -1,0 +1,128 @@
+package org.insa.graphs.algorithm.shortestpath;
+
+import static org.junit.Assert.*;
+import org.insa.graphs.algorithm.AbstractInputData.Mode;
+import org.junit.Test;
+
+public class PerformanceDijkstraAStar {
+
+	@Test
+	public void testLength1() throws Exception {
+		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+		
+		String mapName;
+		int nbSommets;
+		
+		
+		// TEST 1 MAP = Toulouse : Length
+		System.out.println("TEST N°1----------------------------------------------");
+		mapName = "toulouse.mapgr";
+		nbSommets=39857;
+		executeNTestOnAMap(cheminVersMaps,mapName,nbSommets,Mode.LENGTH);
+		System.out.println("-------FIN TEST N°1\n");
+
+	}
+	
+	@Test
+	public void testLength2() throws Exception {
+		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+		
+		String mapName;
+		int nbSommets;
+		
+		// TEST 2 MAP = Paris : LENGTH
+		System.out.println("TEST N°2----------------------------------------------");
+		mapName = "paris.mapgr";
+		nbSommets=48432;
+		executeNTestOnAMap(cheminVersMaps,mapName,nbSommets,Mode.LENGTH);
+		System.out.println("-------FIN TEST N°2\n");
+	}
+	
+
+	
+	@Test
+	public void testTime1() throws Exception {
+		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+		
+		String mapName;
+		int nbSommets;
+		
+		// TEST 3 MAP = Toulouse : TIME
+		System.out.println("TEST N°3----------------------------------------------");
+		mapName = "toulouse.mapgr";
+		nbSommets=39857;
+		executeNTestOnAMap(cheminVersMaps,mapName,nbSommets,Mode.TIME);
+		System.out.println("-------FIN TEST N°3\n");
+	}
+	
+	@Test
+	public void testTime2() throws Exception {
+		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+		
+		String mapName;
+		int nbSommets;
+		
+		// TEST 4 MAP = Paris : TIME
+		System.out.println("TEST N°4----------------------------------------------");
+		mapName = "paris.mapgr";
+		nbSommets=48432;
+		executeNTestOnAMap(cheminVersMaps,mapName,nbSommets,Mode.TIME);
+		System.out.println("-------FIN TEST N°4\n");
+		System.out.println("***FIN***");
+	}
+	
+	public void executeNTestOnAMap(String cheminVersMaps,String mapName,int nbSommets,Mode modeTest) throws Exception {
+	// Constante(s)
+		int NB_EXECUTION=10;
+		
+		// Variables
+  		int origin,destination;
+  		long startTime,endTime,timeElapsedD,timeElapsedDAStar;
+  		
+  		// Initialisation des classes de tests
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		solutionDijkstraAStarTest soluceDijkstraAStar=new solutionDijkstraAStarTest();
+  		
+  		
+		
+
+		//-- TEST -- 20 executions de l'algorithme 
+		timeElapsedD=0;
+		timeElapsedDAStar=0;
+		System.out.println(NB_EXECUTION+" executions des algorithmes sur la carte : "+mapName+" en mode : "+modeTest.toString()+"\n");
+		
+		int Max=nbSommets;// Nombre de sommets dans toulouse.mapgr
+		
+		for(int i=0;i<NB_EXECUTION;i++) {
+			System.out.println("**Execution"+(i+1)+"\n");
+			
+			// Initialisation d'une origine et destination aléatoire
+			origin=(int)(Math.random() * (Max  + 1));
+			destination=(int)(Math.random() * (Max + 1));
+			
+			// Dijkstra classique
+			startTime=System.nanoTime();
+			soluceDijkstra.execute(cheminVersMaps+mapName,origin,destination,modeTest);
+			endTime=System.nanoTime();
+			timeElapsedD+=endTime-startTime;
+			System.out.println("Total time elapsed = "+timeElapsedD);
+
+			System.out.println("\n");
+			// AStar
+			startTime=System.nanoTime();
+			soluceDijkstraAStar.execute(cheminVersMaps+mapName,origin,destination,modeTest);
+			endTime=System.nanoTime();
+			timeElapsedDAStar+=endTime-startTime;
+			System.out.println("Total time elapsed = "+timeElapsedDAStar);
+			System.out.println("\n");
+		}
+		double moyD=timeElapsedD/1000000000.0;// /1000000000 pour avoir le temps en seconde
+		double moyDAStar=timeElapsedDAStar/1000000000.0;// /1000000000 pour avoir le temps en seconde
+		System.out.println("Temps d'execution de Dijkstra en seconde = "+moyD);
+		System.out.println("Temps d'execution de A Star en seconde = "+moyDAStar);
+		System.out.println("Sur ces"+ NB_EXECUTION+" executions A Star est "+(double)moyD/moyDAStar+" fois meilleur que l'algorithme classique");
+		assertTrue(timeElapsedD > timeElapsedDAStar);
+
+	}
+
+}

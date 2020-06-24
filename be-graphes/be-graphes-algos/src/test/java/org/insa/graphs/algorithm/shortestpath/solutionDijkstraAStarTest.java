@@ -14,11 +14,12 @@ import org.insa.graphs.model.io.BinaryGraphReader;
 import org.insa.graphs.model.io.GraphReader;
 import org.junit.Test;
 
-public class solutionDijkstraAStarTest {
+public class solutionDijkstraAStarTest extends solutionDijkstraTest{
 
 	// Fonction testant un scénario
+		@Override
 		public void testScenario(String mapName, int origine, int destination, Mode modeEval) throws Exception {
-
+			
 			System.out.println("Origine : " + origine);
 			System.out.println("Destination : " + destination);
 
@@ -90,7 +91,12 @@ public class solutionDijkstraAStarTest {
 		
 		
 		// Fonction qui execute un scenario
-				public void execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
+		/* retourne 0 si pas de solution 
+		 * retourne 1 si solution
+		 */
+		@Override
+				public int execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
+					System.out.println("A Star ");
 
 					System.out.println("Origine : " + origine);
 					System.out.println("Destination : " + destination);
@@ -123,6 +129,7 @@ public class solutionDijkstraAStarTest {
 					if (solution.getPath() == null) {
 						System.out.println("PAS DE SOLUTION");
 						System.out.println("(infini) ");
+						return 0;
 					}
 					// Un plus court chemin trouve 
 					else {
@@ -136,9 +143,8 @@ public class solutionDijkstraAStarTest {
 						}
 						System.out.println("Cout solution: " + coutDeLaSolution);
 								
-							
+						return 1;
 						}
-					System.out.println();
 				}
 
 }

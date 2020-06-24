@@ -88,8 +88,12 @@ public class solutionDijkstraTest {
 	}
 	
 	// Fonction qui execute un scenario
-	public void execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
+	/* retourne 0 si pas de solution 
+	 * retourne 1 si solution
+	 */
+	public int execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
 
+		System.out.println("Dijkstra Classique ");
 		System.out.println("Origine : " + origine);
 		System.out.println("Destination : " + destination);
 
@@ -121,6 +125,7 @@ public class solutionDijkstraTest {
 		if (solution.getPath() == null) {
 			System.out.println("PAS DE SOLUTION");
 			System.out.println("(infini) ");
+			return 0;
 		}
 		// Un plus court chemin trouve 
 		else {
@@ -134,9 +139,8 @@ public class solutionDijkstraTest {
 			}
 			System.out.println("Cout solution: " + coutDeLaSolution);
 					
-				
+			return 1;	
 			}
-		System.out.println();
 	}
 
 }

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="be-graphes-algos" project="be-graphes-algos" tests="161" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="org.insa.graphs.algorithm.shortestpath.DijkstraTest" incomplete="true">
+    <testcase name="testDoDistance" classname="org.insa.graphs.algorithm.shortestpath.DijkstraTest" incomplete="true"/>
+    <testcase name="testDoTemps" classname="org.insa.graphs.algorithm.shortestpath.DijkstraTest" incomplete="true"/>
+  </testsuite>
+  <testsuite name="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" incomplete="true">
+    <testcase name="testDoDistance" classname="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" incomplete="true"/>
+    <testcase name="testDoTemps" classname="org.insa.graphs.algorithm.shortestpath.DijkstraAStarTest" incomplete="true"/>
+  </testsuite>
+  <testsuite name="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" incomplete="true">
+    <testcase name="testPerformance" classname="org.insa.graphs.algorithm.shortestpath.PerformanceDijkstraAStar" incomplete="true"/>
+  </testsuite>
+  <testsuite name="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true">
+    <testsuite name="[0]" incomplete="true">
+      <testcase name="testDeleteThenRemove[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[0]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[1]" incomplete="true">
+      <testcase name="testDeleteThenRemove[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[1]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[2]" incomplete="true">
+      <testcase name="testDeleteThenRemove[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[2]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[3]" incomplete="true">
+      <testcase name="testDeleteThenRemove[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[3]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[4]" incomplete="true">
+      <testcase name="testDeleteThenRemove[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[4]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[5]" incomplete="true">
+      <testcase name="testDeleteThenRemove[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testFindMin[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testSize[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testDeleteMin[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testInsert[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testIsEmpty[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemove[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[5]" classname="org.insa.graphs.algorithm.utils.BinarySearchTreeTest" incomplete="true"/>
+    </testsuite>
+  </testsuite>
+  <testsuite name="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true">
+    <testsuite name="[0]" incomplete="true">
+      <testcase name="testDeleteThenRemove[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[0]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[1]" incomplete="true">
+      <testcase name="testDeleteThenRemove[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[1]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[2]" incomplete="true">
+      <testcase name="testDeleteThenRemove[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[2]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[3]" incomplete="true">
+      <testcase name="testDeleteThenRemove[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[3]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[4]" incomplete="true">
+      <testcase name="testDeleteThenRemove[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[4]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+    <testsuite name="[5]" incomplete="true">
+      <testcase name="testDeleteThenRemove[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveNotFound[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testFindMin[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testSize[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveEmpty[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveTwice[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyFindMin[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testEmptyDeleteMin[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testDeleteMin[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testInsert[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testIsEmpty[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemove[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+      <testcase name="testRemoveThenAdd[5]" classname="org.insa.graphs.algorithm.utils.BinaryHeapTest" incomplete="true"/>
+    </testsuite>
+  </testsuite>
+</testrun>
