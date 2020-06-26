@@ -1,7 +1,5 @@
 package org.insa.graphs.algorithm.shortestpath;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
@@ -17,60 +15,54 @@ public class solutionBellmanFord  extends solutionDijkstraTest{
 	// Fonction testant un scénario
 			
 			
-			// Fonction qui execute un scenario
-			/* retourne 0 si pas de solution 
-			 * retourne 1 si solution
-			 */
-			@Override
-					public int execute(String mapName, int origine, int destination, Mode modeEval) throws Exception {
-						System.out.println("Bellman Ford ");
+			// Fonction qui execute les scenarios
+			public long executeNBellmanFord(String fullPathMap,int [] tabOrigin,int [] tabDestination,Mode modeEval) throws Exception{
+				//System.out.println("Bellman Ford ");
+				
+				
+				// Déclaration Variables 
+				long startTime,endTime,totalElapseTime;
+				
+				totalElapseTime=0;
+				
+				// Create a graph reader.
+				GraphReader reader = new BinaryGraphReader(
+						new DataInputStream(new BufferedInputStream(new FileInputStream(fullPathMap))));
 
-						System.out.println("Origine : " + origine);
-						System.out.println("Destination : " + destination);
+				// Read the graph.
+				Graph graph = reader.read();
 
-						// Create a graph reader.
-						GraphReader reader = new BinaryGraphReader(
-								new DataInputStream(new BufferedInputStream(new FileInputStream(mapName))));
+				
+				ArcInspector arcInspectorBF;
+				
+				if (modeEval == Mode.TIME) { //Temps
+					arcInspectorBF = ArcInspectorFactory.getAllFilters().get(2);
+				} else {//LENGTH
+					arcInspectorBF = ArcInspectorFactory.getAllFilters().get(0);
+				}
 
-						// Read the graph.
-						Graph graph = reader.read();
+				// Trouve les différentes routes
+				for(int i=0;i<tabOrigin.length;i++) {
+					int origine=tabOrigin[i];
+					int destination=tabDestination[i];
+					//System.out.println("Origine : " + origine);
+					//System.out.println("Destination : " + destination);
+					//System.out.print(i+" ");
 
-						
-						ArcInspector arcInspectorBF;
-						
-						if (modeEval == Mode.TIME) { //Temps
-							System.out.println("Mode d'évaluation : Temps");
-							arcInspectorBF = ArcInspectorFactory.getAllFilters().get(2);
-						} else {//LENGTH
-							System.out.println("Mode d'évaluation : Distance");
-							arcInspectorBF = ArcInspectorFactory.getAllFilters().get(0);
-						}
-						
-						ShortestPathData data = new ShortestPathData(graph, graph.get(origine),graph.get(destination), arcInspectorBF);
-						BellmanFordAlgorithm BFalgo = new BellmanFordAlgorithm(data);
-									
-						// Recuperation des solutions de Bellman et Dijkstra pour comparer 
-						ShortestPathSolution solution = BFalgo.run();
+					ShortestPathData data = new ShortestPathData(graph, graph.get(origine),graph.get(destination), arcInspectorBF);
+					BellmanFordAlgorithm BFalgo = new BellmanFordAlgorithm(data);
 					
-									
-						if (solution.getPath() == null) {
-							System.out.println("PAS DE SOLUTION");
-							System.out.println("(infini) ");
-							return 0;
-						}
-						// Un plus court chemin trouve 
-						else {
-							double coutDeLaSolution;
-							if(modeEval ==Mode.TIME) { //Temps
-								//Calcul du cout de la solution 
-								coutDeLaSolution = solution.getPath().getMinimumTravelTime();
-							} else {//LENGTH
-								//Calcul du cout de la solution 
-								coutDeLaSolution = solution.getPath().getLength();
-							}
-							System.out.println("Cout solution: " + coutDeLaSolution);
-									
-							return 1;
-							}
-					}
+					
+					startTime=System.nanoTime();
+					/*ShortestPathSolution sol = */BFalgo.run();
+					endTime=System.nanoTime();
+					//if(sol.getPath() != null){
+						totalElapseTime+=endTime-startTime;
+					//}				
+				}
+				reader.close();
+				//System.out.println();
+				return totalElapseTime;
+			}
+				
 }

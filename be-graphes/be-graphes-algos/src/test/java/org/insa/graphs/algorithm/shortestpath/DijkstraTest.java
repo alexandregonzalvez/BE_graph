@@ -1,162 +1,135 @@
-package org.insa.graphs.algorithm.shortestpath;
+ package org.insa.graphs.algorithm.shortestpath;
 
 import static org.junit.Assert.*;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.insa.graphs.algorithm.AbstractInputData.Mode;
 
 
 public class DijkstraTest {
     
-    
-    @Test
-  	public void testDoDistance() throws Exception {
-  		// A changé selon la machine utilisé
-  		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+	// A changer selon la machine utilisé
+	final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
+
+	
+    @Test 
+    public void testLengthPathNull() throws Exception{
   		int origin,destination;
  
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
   		
-  		Mode modetest=Mode.LENGTH;
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.LENGTH;
   		String mapName = "paris.mapgr";
   		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		
+		System.out.println("-- Cas d'un chemin nul --");
+		
+		origin = 0 ;
+		destination = 0;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    @Test 
+    public void testLengthNoNodeOrigin() throws Exception{
+    	int origin,destination;
+    	 
   		// Instanciation de la classe test
   		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.LENGTH;
+		String mapName = "insa.mapgr";
   		
   		//On affiche la carte et le mode testé
-  		System.out.println("-- Algo : Dijkstra classique --");
-		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
-		
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
 		System.out.println("-- Carte : "+ mapName +" --");
 		
-		System.out.println("-- Cas d'un chemin nul --");
-		origin = 0 ;
-		destination = 0;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		mapName = "insa.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
 		
 		System.out.println("-- Cas sommet non existant (origine)--");
 		origin = 1600 ;
 		destination = 1001;
 		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas sommet non existant (destination)--");
-		origin = 0 ;
-		destination = 1400;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		mapName = "washington.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		System.out.println("-- Pas de chemin selon Bellman-Ford --");
-		origin = 1900 ;
-		destination = 1645;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		mapName = "insa.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		
-		System.out.println("-- Cas normal 1 --");
-		origin = 50 ;
-		destination = 1300;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		mapName = "bordeaux.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		System.out.println("-- Cas normal 2 --");
-		origin = 354 ;
-		destination = 1789;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-
-		System.out.println("-- Cas normal 3 --");
-		origin = 1900 ;
-		destination = 1645;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas normal 4 --");
-		origin = 100 ;
-		destination = 25;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		
-		mapName = "washington.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		System.out.println("-- Cas normal 5 --");		
-		origin = 121833 ;
-		destination = 113525;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		mapName = "paris.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		System.out.println("-- Cas normal 6 --");
-		origin = 1900 ;
-		destination = 1645;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas normal 7 --");
-		origin = 100 ;
-		destination = 25;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas normal 8 --");
-		origin = 1900 ;
-		destination = 1645;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas normal 9 --");
-		origin = 100 ;
-		destination = 25;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-
-  	}
-  	
-    @Test
-  	public void testDoTemps() throws Exception {
-  		// A changé selon la machine utilisé
-  		final String cheminVersMaps ="/Users/Alexandre/Desktop/3eme Annee MIC/Graphes-et-Algorithmes/Maps/";
-  		int origin,destination;
- 
-  		
-  		Mode modetest=Mode.TIME;
-  		String mapName = "bretagne.mapgr";
-  		
+    }
+    
+    @Test 
+    public void testLengthNoNodeDestination() throws Exception{
+    	int origin,destination;
+    	 
   		// Instanciation de la classe test
   		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
   		
-  	//On affiche la carte et le mode testé
+  		// On affiche l'algo utilisé
   		System.out.println("-- Algo : Dijkstra classique --");
-		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
 		
+		
+		Mode modetest=Mode.LENGTH;
+		String mapName = "insa.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
 		System.out.println("-- Carte : "+ mapName +" --");
 		
-		System.out.println("-- Cas d'un chemin nul --");
-		origin = 0 ;
-		destination = 0;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
 		
-		mapName = "insa.mapgr";
-		System.out.println("-- Carte : "+ mapName +" --");
-		
-		System.out.println("-- Cas sommet non existant (origine)--");
-		origin = 1600 ;
-		destination = 1001;
-		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
-		
-		System.out.println("-- Cas sommet non existant (destination)--");
+		System.out.println("-- Cas sommet non destination (origine)--");
 		origin = 0 ;
 		destination = 1400;
 		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    @Test
+    public void testLengthNoPathByBF() throws Exception{
+    	int origin,destination;
+   	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
 		
-		mapName = "washington.mapgr";
+		
+		Mode modetest=Mode.LENGTH;
+		String mapName = "washington.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
 		System.out.println("-- Carte : "+ mapName +" --");
-		System.out.println("-- Pas de chemin selon Bellman-Ford --");
+		
+		
+		System.out.println("-- Cas sommet non destination (origine)--");
 		origin = 1900 ;
 		destination = 1645;
 		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    
+    @Test
+  	public void testLength10NormalScenario() throws Exception {
+
+    	int origin,destination;
+      	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
 		
-		mapName = "insa.mapgr";
+		String mapName = "insa.mapgr";
+		Mode modetest=Mode.LENGTH;
+		
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
 		System.out.println("-- Carte : "+ mapName +" --");
 		
 		System.out.println("-- Cas normal 1 --");
@@ -186,8 +159,8 @@ public class DijkstraTest {
 		mapName = "washington.mapgr";
 		System.out.println("-- Carte : "+ mapName +" --");
 		System.out.println("-- Cas normal 5 --");		
-		origin = 121833 ;
-		destination = 113525;
+		origin = 1218 ;
+		destination = 4852;
 		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
 		
 		mapName = "paris.mapgr";
@@ -211,8 +184,181 @@ public class DijkstraTest {
 		origin = 100 ;
 		destination = 25;
 		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+  	}
+  	
+    @Test 
+    public void testTimePathNull() throws Exception{
+  		int origin,destination;
+ 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.TIME;
+  		String mapName = "bretagne.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		
+		System.out.println("-- Cas d'un chemin nul --");
+		
+		origin = 0 ;
+		destination = 0;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    @Test 
+    public void testTimeNoNodeOrigin() throws Exception{
+    	int origin,destination;
+    	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.TIME;
+		String mapName = "insa.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		
+		System.out.println("-- Cas sommet non existant (origine)--");
+		origin = 1600 ;
+		destination = 1001;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    @Test 
+    public void testTimeNoNodeDestination() throws Exception{
+    	int origin,destination;
+    	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.TIME;
+		String mapName = "insa.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		
+		System.out.println("-- Cas sommet non destination (origine)--");
+		origin = 0 ;
+		destination = 1400;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    @Test
+    public void testTimeNoPathByBF() throws Exception{
+    	int origin,destination;
+   	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		
+		Mode modetest=Mode.TIME;
+		String mapName = "washington.mapgr";
+  		
+  		//On affiche la carte et le mode testé
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		
+		System.out.println("-- Cas sommet non destination (origine)--");
+		origin = 1900 ;
+		destination = 1645;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+    }
+    
+    
+    @Test
+  	public void testTime10NormalScenario() throws Exception {
+
+    	int origin,destination;
+      	 
+  		// Instanciation de la classe test
+  		solutionDijkstraTest soluceDijkstra=new solutionDijkstraTest();
+  		
+  		// On affiche l'algo utilisé
+  		System.out.println("-- Algo : Dijkstra classique --");
+		
+		String mapName = "insa.mapgr";
+		Mode modetest=Mode.TIME;
+		
+  		System.out.println("-- Mode : "+ modetest.toString() +" --\n");
+		System.out.println("-- Carte : "+ mapName +" --");
+		
+		System.out.println("-- Cas normal 1 --");
+		origin = 50 ;
+		destination = 1110;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		mapName = "bordeaux.mapgr";
+		System.out.println("-- Carte : "+ mapName +" --");
+		System.out.println("-- Cas normal 2 --");
+		origin = 354 ;
+		destination = 1789;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
 		
 
+		System.out.println("-- Cas normal 3 --");
+		origin = 1900 ;
+		destination = 1645;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		System.out.println("-- Cas normal 4 --");
+		origin = 100 ;
+		destination = 25;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		
+		mapName = "washington.mapgr";
+		System.out.println("-- Carte : "+ mapName +" --");
+		System.out.println("-- Cas normal 5 --");		
+		origin = 1218 ;
+		destination = 4852;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		mapName = "paris.mapgr";
+		System.out.println("-- Carte : "+ mapName +" --");
+		System.out.println("-- Cas normal 6 --");
+		origin = 1900 ;
+		destination = 1645;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		System.out.println("-- Cas normal 7 --");
+		origin = 100 ;
+		destination = 25;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		System.out.println("-- Cas normal 8 --");
+		origin = 1900 ;
+		destination = 1645;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
+		
+		System.out.println("-- Cas normal 9 --");
+		origin = 100 ;
+		destination = 25;
+		soluceDijkstra.testScenario(cheminVersMaps+mapName,origin,destination,modetest);
   	}
+    
+   
 
 }
